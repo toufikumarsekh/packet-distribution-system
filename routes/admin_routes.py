@@ -8,6 +8,8 @@ from flask import (
 
 from extensions import db
 
+from models import beneficiary
+from models import beneficiary
 from models.admin import Admin
 from models.beneficiary import Beneficiary
 from models.distribution import Distribution
@@ -117,7 +119,6 @@ def beneficiaries():
 # ----------------------------
 # Approve Beneficiary
 # ----------------------------
-
 @admin_bp.route("/admin/approve/<int:id>")
 def approve_beneficiary(id):
 
@@ -130,6 +131,7 @@ def approve_beneficiary(id):
 
     beneficiary.status = "Approved"
     beneficiary.qr_token = token
+
     qr_url = f"https://packet-distribution-system.onrender.com/verify/{token}"
 
     generate_qr(qr_url)
