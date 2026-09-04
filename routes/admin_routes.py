@@ -130,7 +130,6 @@ def approve_beneficiary(id):
 
     beneficiary.status = "Approved"
     beneficiary.qr_token = token
-
     qr_url = f"https://packet-distribution-system.onrender.com/verify/{token}"
 
     generate_qr(qr_url)
