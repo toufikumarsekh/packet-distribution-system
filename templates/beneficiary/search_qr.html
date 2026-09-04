@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}
+Find My QR
+{% endblock %}
+
+{% block content %}
+
+<section class="register-section">
+
+    <div class="register-card">
+
+        <h1>Find My QR Code</h1>
+
+        <p>
+            Enter your Roll Number to access your QR Pass
+        </p>
+
+        <form method="POST">
+
+            <div class="form-group">
+
+                <label>Roll Number</label>
+
+                <input
+                    type="text"
+                    name="roll_number"
+                    placeholder="Enter Roll Number"
+                    required
+                >
+
+            </div>
+
+            <button
+                type="submit"
+                class="register-btn"
+            >
+                Search QR
+            </button>
+
+        </form>
+
+        {% if beneficiary %}
+
+        <div class="qr-result">
+
+            <h2>{{ beneficiary.name }}</h2>
+
+            <p>
+                Roll: {{ beneficiary.roll_number }}
+            </p>
+
+            <p>
+                {{ beneficiary.department }}
+                |
+                {{ beneficiary.year }}
+            </p>
+
+            <p>
+                {{ beneficiary.genesis_role }}
+            </p>
+
+            {% if beneficiary.qr_token %}
+
+            <img
+                src="{{ url_for('static',
+                filename='qr_codes/' + beneficiary.qr_token + '.png') }}"
+                alt="QR Code"
+                class="qr-image"
+            >
+
+            {% else %}
+
+            <h3 style="color:orange;">
+                QR Not Approved Yet
+            </h3>
+
+            {% endif %}
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}

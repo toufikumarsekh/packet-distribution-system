@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-left">
+
+        <span class="badge">
+            QR Powered Distribution
+        </span>
+
+        <h1>
+            Smart Food Distribution
+            <span>Through QR Technology</span>
+        </h1>
+
+        <p>
+            Prevent duplicate food collection,
+            verify beneficiaries instantly,
+            and manage distributions digitally.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="/register" class="btn primary-btn">
+                Register Beneficiary
+            </a>
+
+            <a href="/search_qr" class="btn secondary-btn">
+                Find My QR
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-right">
+
+        <div class="glass-card">
+
+            <h3>Live Statistics</h3>
+
+            <div class="stat">
+                👥 Beneficiaries
+                <span>352</span>
+            </div>
+
+            <div class="stat">
+                ✅ Approved
+                <span>280</span>
+            </div>
+
+            <div class="stat">
+                🍱 Distributed
+                <span>190</span>
+            </div>
+
+            <div class="stat">
+                ⏳ Pending
+                <span>72</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section class="features">
+
+    <h2>Powerful Features</h2>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <i class="fa-solid fa-qrcode"></i>
+            <h3>QR Based Verification</h3>
+            <p>Every beneficiary gets a unique QR code.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h3>Duplicate Prevention</h3>
+            <p>Stop multiple food collections instantly.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-users"></i>
+            <h3>Beneficiary Management</h3>
+            <p>Manage hundreds of beneficiaries easily.</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>Live Tracking</h3>
+            <p>Monitor distributions in real time.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+
+{% endblock %}

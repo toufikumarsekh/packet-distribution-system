@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}
+Genesis Registration
+{% endblock %}
+
+{% block content %}
+
+<section class="register-section">
+
+    <div class="register-card">
+
+        <h1>Genesis Food Registration</h1>
+
+        <p>
+            Register to receive your QR Food Pass
+        </p>
+
+        <form method="POST">
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter Full Name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Roll Number</label>
+                <input
+                    type="text"
+                    name="roll_number"
+                    placeholder="Enter Roll Number"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Year</label>
+
+                <select name="year" required>
+                    <option value="">Select Year</option>
+                    <option>1st Year</option>
+                    <option>2nd Year</option>
+                    <option>3rd Year</option>
+                    <option>4th Year</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Department</label>
+
+                <select name="department" required>
+                    <option value="">Select Department</option>
+
+                    <option>CSE</option>
+                    <option>IT</option>
+                    <option>ECE</option>
+                    <option>EE</option>
+                    <option>ME</option>
+                    <option>CE</option>
+                    <option>BCA</option>
+                    <option>BBA</option>
+                    <option>MBA</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Genesis Role</label>
+
+                <select name="genesis_role" required>
+                    <option value="">Select Role</option>
+
+                    <option>Participant</option>
+                    <option>Volunteer</option>
+                    <option>Organizer</option>
+                    <option>Faculty</option>
+                    <option>Guest</option>
+                </select>
+            </div>
+
+            <button
+                type="submit"
+                class="register-btn"
+            >
+                Register Now
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

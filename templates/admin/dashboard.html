@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}
+Admin Dashboard
+{% endblock %}
+
+{% block content %}
+
+<section class="dashboard-section">
+
+    <div class="dashboard-header">
+
+        <div>
+            <h1>Admin Dashboard</h1>
+            <p>Genesis Food Distribution System</p>
+        </div>
+
+        <div class="dashboard-actions">
+
+            <a href="/admin/beneficiaries" class="dashboard-btn">
+                <i class="fa-solid fa-users"></i>
+                Manage Students
+            </a>
+
+            <a href="/admin/logout" class="logout-btn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="dashboard-grid">
+
+        <div class="dashboard-card">
+            <div class="card-icon">
+                <i class="fa-solid fa-user-group"></i>
+            </div>
+
+            <h2>{{ total_registered }}</h2>
+            <p>Registered Students</p>
+        </div>
+
+        <div class="dashboard-card">
+            <div class="card-icon approved">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <h2>{{ total_approved }}</h2>
+            <p>Approved</p>
+        </div>
+
+        <div class="dashboard-card">
+            <div class="card-icon distributed">
+                <i class="fa-solid fa-box"></i>
+            </div>
+
+            <h2>{{ total_distributed }}</h2>
+            <p>Food Distributed</p>
+        </div>
+
+        <div class="dashboard-card">
+            <div class="card-icon pending">
+                <i class="fa-solid fa-clock"></i>
+            </div>
+
+            <h2>{{ total_pending }}</h2>
+            <p>Pending Approval</p>
+        </div>
+
+    </div>
+
+    <div class="dashboard-info">
+
+        <h3>System Overview</h3>
+
+        <p>
+            Monitor registrations, approvals and food distributions
+            across the Genesis Food Distribution Program.
+        </p>
+
+    </div>
+
+</section>
+
+{% endblock %}

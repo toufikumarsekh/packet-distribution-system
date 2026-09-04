@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}
+Distribution Successful
+{% endblock %}
+
+{% block content %}
+
+<section class="success-section">
+
+    <div class="success-card">
+
+        <div class="success-icon">
+            ✅
+        </div>
+
+        <h1>Food Distributed Successfully</h1>
+
+        <p>
+            The participant has successfully received their food package.
+        </p>
+
+        <div class="success-buttons">
+
+            <a href="/scanner" class="btn primary-btn">
+                Scan Next QR
+            </a>
+
+            <a href="/" class="btn secondary-btn">
+                Back To Home
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

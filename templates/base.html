@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}Genesis Food Distribution System{% endblock %}</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+
+    <!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo">
+
+    <i class="fa-solid fa-utensils"></i>
+
+    <span>Genesis Food System</span>
+
+</div>
+
+    <ul class="nav-links" id="navLinks">
+
+        <li><a href="/">Home</a></li>
+
+        <li><a href="/register">Register</a></li>
+
+        <li><a href="/search_qr">Find QR</a></li>
+
+        <li><a href="/scanner">Scanner</a></li>
+
+        <li><a href="/admin/beneficiaries">Dashboard</a></li>
+
+    </ul>
+
+    <div class="hamburger" id="hamburger">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+</nav>
+
+    {% block content %}
+    {% endblock %}
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <h3>Genesis Food Distribution System</h3>
+
+        <p>
+            QR Based Food Distribution & Verification Platform
+        </p>
+
+        <p class="copyright">
+            Developed by Toufik Umar Sekh
+        </p>
+
+    </div>
+
+</footer>
+</html>

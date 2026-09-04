@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block title %}
+Admin Dashboard
+{% endblock %}
+
+{% block content %}
+
+<section class="dashboard">
+
+    <h1 class="dashboard-title">
+        Genesis Food Distribution Dashboard
+    </h1>
+
+    <div class="dashboard-table">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Roll No</th>
+                    <th>Department</th>
+                    <th>Year</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            {% for beneficiary in beneficiaries %}
+
+                <tr>
+
+                    <td>{{ beneficiary.id }}</td>
+
+                    <td>{{ beneficiary.name }}</td>
+
+                    <td>{{ beneficiary.roll_number }}</td>
+
+                    <td>{{ beneficiary.department }}</td>
+
+                    <td>{{ beneficiary.year }}</td>
+
+                    <td>{{ beneficiary.genesis_role }}</td>
+
+                    <td>
+
+                        {% if beneficiary.status == "Approved" %}
+
+                            <span class="status-approved">
+                                Approved
+                            </span>
+
+                        {% else %}
+
+                            <span class="status-pending">
+                                Pending
+                            </span>
+
+                        {% endif %}
+
+                    </td>
+
+                    <td>
+
+                        {% if beneficiary.status == "Pending" %}
+
+                            <a
+                                href="/admin/approve/{{ beneficiary.id }}"
+                                class="approve-btn"
+                            >
+                                Approve
+                            </a>
+
+                        {% else %}
+
+                            <span class="approved-text">
+                                QR Generated
+                            </span>
+
+                        {% endif %}
+
+                    </td>
+
+                </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+{% endblock %}

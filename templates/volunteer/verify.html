@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}
+Verification
+{% endblock %}
+
+{% block content %}
+
+<section class="verify-section">
+
+    <div class="verify-card">
+
+        {% if distribution %}
+
+            <div class="status-banner denied">
+                ❌ Food Already Distributed
+            </div>
+
+        {% else %}
+
+            <div class="status-banner approved">
+                ✅ Eligible For Distribution
+            </div>
+
+        {% endif %}
+
+        <h1>{{ beneficiary.name }}</h1>
+
+        <div class="student-info">
+
+            <div class="info-box">
+                <span>Roll Number</span>
+                <h3>{{ beneficiary.roll_number }}</h3>
+            </div>
+
+            <div class="info-box">
+                <span>Department</span>
+                <h3>{{ beneficiary.department }}</h3>
+            </div>
+
+            <div class="info-box">
+                <span>Year</span>
+                <h3>{{ beneficiary.year }}</h3>
+            </div>
+
+            <div class="info-box">
+                <span>Genesis Role</span>
+                <h3>{{ beneficiary.genesis_role }}</h3>
+            </div>
+
+        </div>
+
+        {% if not distribution %}
+
+            <a
+                href="/distribute/{{ beneficiary.id }}"
+                class="distribute-btn"
+            >
+                🍱 Mark Food Distributed
+            </a>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}
